@@ -66,7 +66,7 @@
 	[self.view addSubview:self.ballView];
     
     self.blockView = [[AOBlock alloc]initWithHeight:25 width:90 position:90 color:[UIColor blueColor]];
-   self.blockView1 = [[AOBlock alloc]initWithHeight:25 width:90 position:800 color:[UIColor blueColor]];
+   self.blockView1 = [[AOBlock alloc]initWithHeight:25 width:90 position:500 color:[UIColor greenColor]];
     [self.view addSubview:self.blockView];
     [self.view addSubview:self.blockView1];
     

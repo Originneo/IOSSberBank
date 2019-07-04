@@ -1,22 +1,21 @@
 //
-//  ViewController.m
+//  OtherViewController.m
 //  AOTryViewController
 //
-//  Created by Камила Валиева on 30/06/2019.
+//  Created by Камила Валиева on 04/07/2019.
 //  Copyright © 2019 Камила Валиева. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "OtherViewController.h"
 #import "FirstViewController.h"
 #import "SecondViewController.h"
-@interface ViewController ()
+@interface OtherViewController ()
 @property(nonatomic,strong)FirstViewController* vc1;
 @property(nonatomic,strong)SecondViewController* vc2;
 
 @end
 
-@implementation ViewController
-
+@implementation OtherViewController
 
 
 - (void)viewDidLoad {
@@ -25,9 +24,9 @@
     self.vc2 = [SecondViewController new];
     [self.view addSubview:self.vc2.view];
     [self.view addSubview:self.vc1.view];
-//    self.view.backgroundColor = UIColor.grayColor;
+    //    self.view.backgroundColor = UIColor.grayColor;
     [self makeConstraints];
-
+    
 }
 
 
@@ -35,16 +34,17 @@
 -(void) makeConstraints
 {
     [self.vc1.view.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
-    [self.vc1.view.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+    [self.vc1.view.trailingAnchor constraintEqualToAnchor:self.vc2.view.leadingAnchor].active = YES;
     [self.vc1.view.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
-    [self.vc1.view.bottomAnchor constraintEqualToAnchor:self.vc2.view.topAnchor].active = YES;
+    [self.vc1.view.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
     
-    [self.vc2.view.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+    [self.vc2.view.widthAnchor constraintEqualToAnchor:self.vc1.view.widthAnchor].active = YES;
     [self.vc2.view.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
     [self.vc2.view.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
-    [self.vc2.view.heightAnchor constraintEqualToAnchor:self.vc1.view.heightAnchor].active = YES;
+    [self.vc2.view.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
     
-
+    
     
 }
+
 @end

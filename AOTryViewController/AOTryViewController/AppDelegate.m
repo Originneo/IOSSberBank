@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "FirstViewController.h"
+#import "OtherViewController.h"
+
 @interface AppDelegate ()
 @end
 
@@ -18,13 +19,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     self.window.backgroundColor = UIColor.whiteColor;
-    UINavigationController* navCon = [[UINavigationController alloc]init];
-    ViewController* VC1 = [[ViewController alloc]init];
-    [navCon setViewControllers:(@[VC1])];
-    
     [self.window makeKeyAndVisible];
-    [self.window setRootViewController:navCon];
-    // Override point for customization after application launch.
+    UITabBarController* barCon = [[UITabBarController alloc]init];
+    
+    ViewController* vc = [[ViewController alloc]init];
+    OtherViewController* vc1 = [[OtherViewController alloc]init];
+    [barCon setViewControllers:(@[vc,vc1])];
+    [self.window setRootViewController:barCon];
+    vc.tabBarItem.title = @"1";
+    vc1.tabBarItem.title = @"2";
+
+    
+    
     return YES;
 }
 

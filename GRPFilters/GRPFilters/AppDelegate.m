@@ -23,8 +23,7 @@
     self.vc = [ViewController new];
     [navigationController setViewControllers:@[self.vc]];
     self.window.rootViewController = navigationController;
-    self.vc.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(saveImage)];
-    self.vc.navigationItem.rightBarButtonItem.title = @"Save";
+    self.vc.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveImage)];
     self.vc.navigationItem.rightBarButtonItem.tintColor = UIColor.blueColor;
     
 	// Override point for customization after application launch.

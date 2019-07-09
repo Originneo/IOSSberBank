@@ -62,7 +62,7 @@
 	[self.view addSubview:self.ballView];
     
     self.computerBlockView = [[AOBlockView alloc]initWithHeight:25 width:90 position:90 color:[UIColor blueColor]];
-    self.playerBlockView = [[AOBlockView alloc]initWithHeight:25 width:90 position:500 color:[UIColor greenColor]];
+    self.playerBlockView = [[AOBlockView alloc]initWithHeight:25 width:90 position:700 color:[UIColor greenColor]];
     [self.view addSubview:self.computerBlockView];
     [self.view addSubview:self.playerBlockView];
     

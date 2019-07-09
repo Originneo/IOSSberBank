@@ -37,9 +37,9 @@
 
 - (void)didMoveToSuperview
 {
-	self.backgroundColor = self.ballColor;
-	self.layer.cornerRadius = self.ballRadius;
-	self.layer.masksToBounds = YES;
+    self.backgroundColor = self.ballColor;
+    self.layer.cornerRadius = self.ballRadius;
+    self.layer.masksToBounds = YES;
 }
 
 @end

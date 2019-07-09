@@ -14,7 +14,7 @@
 		1F05254F22993E4B00243E64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F05254D22993E4A00243E64 /* LaunchScreen.storyboard */; };
 		1F05255222993E4B00243E64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F05255122993E4B00243E64 /* main.m */; };
 		1F05255A22993EF300243E64 /* GRPBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F05255922993EF300243E64 /* GRPBallView.m */; };
-		5BDD698A22BAAD3D00BCD58B /* AOBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD698922BAAD3D00BCD58B /* AOBlock.m */; };
+		5BDD698A22BAAD3D00BCD58B /* AOBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD698922BAAD3D00BCD58B /* AOBlockView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		1F05255122993E4B00243E64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F05255822993EF300243E64 /* GRPBallView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRPBallView.h; sourceTree = "<group>"; };
 		1F05255922993EF300243E64 /* GRPBallView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRPBallView.m; sourceTree = "<group>"; };
-		5BDD698822BAAD3D00BCD58B /* AOBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AOBlock.h; sourceTree = "<group>"; };
-		5BDD698922BAAD3D00BCD58B /* AOBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AOBlock.m; sourceTree = "<group>"; };
+		5BDD698822BAAD3D00BCD58B /* AOBlockView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AOBlockView.h; sourceTree = "<group>"; };
+		5BDD698922BAAD3D00BCD58B /* AOBlockView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AOBlockView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				1F05255B22993F0100243E64 /* Views */,
-				1F05254322993E4A00243E64 /* AppDelegate.m */,
 				1F05254522993E4A00243E64 /* ViewController.h */,
 				1F05254622993E4A00243E64 /* ViewController.m */,
 				1F05254222993E4A00243E64 /* AppDelegate.h */,
+				1F05254322993E4A00243E64 /* AppDelegate.m */,
 				1F05254822993E4A00243E64 /* Main.storyboard */,
 				1F05254B22993E4A00243E64 /* Assets.xcassets */,
 				1F05254D22993E4A00243E64 /* LaunchScreen.storyboard */,
@@ -81,8 +81,8 @@
 		1F05255B22993F0100243E64 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5BDD698822BAAD3D00BCD58B /* AOBlock.h */,
-				5BDD698922BAAD3D00BCD58B /* AOBlock.m */,
+				5BDD698822BAAD3D00BCD58B /* AOBlockView.h */,
+				5BDD698922BAAD3D00BCD58B /* AOBlockView.m */,
 				1F05255822993EF300243E64 /* GRPBallView.h */,
 				1F05255922993EF300243E64 /* GRPBallView.m */,
 			);
@@ -163,7 +163,7 @@
 				1F05255222993E4B00243E64 /* main.m in Sources */,
 				1F05254422993E4A00243E64 /* AppDelegate.m in Sources */,
 				1F05255A22993EF300243E64 /* GRPBallView.m in Sources */,
-				5BDD698A22BAAD3D00BCD58B /* AOBlock.m in Sources */,
+				5BDD698A22BAAD3D00BCD58B /* AOBlockView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

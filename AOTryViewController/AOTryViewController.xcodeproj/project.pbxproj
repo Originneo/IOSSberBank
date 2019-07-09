@@ -154,8 +154,8 @@
 			children = (
 				5BF9A15222C8180400E91349 /* FirstViewController.h */,
 				5BF9A15322C8180400E91349 /* FirstViewController.m */,
-				5BF9A19C22CE484B00E91349 /* SecondViewController.m */,
 				5BF9A19B22CE484B00E91349 /* SecondViewController.h */,
+				5BF9A19C22CE484B00E91349 /* SecondViewController.m */,
 			);
 			name = SwitchViewControllers;
 			sourceTree = "<group>";

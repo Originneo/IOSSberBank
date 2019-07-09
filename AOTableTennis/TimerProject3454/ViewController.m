@@ -18,7 +18,7 @@
 @property (nonatomic, assign) CGFloat deltaY;
 @property (nonatomic,strong) AOBlockView *computerBlockView;
 @property (nonatomic,strong) AOBlockView *playerBlockView;
-@property (nonatomic,strong) UINavigationItem* navItem;
+@property (nonatomic,strong) UINavigationItem* navigationItem;
 @property (nonatomic,strong) NSString* result;
 @property (nonatomic,assign) NSInteger firstPlayerWinner;
 @property (nonatomic, assign) NSInteger secondPlayerWinner;
@@ -44,8 +44,8 @@
     self.firstPlayerWinner = 0;
     self.secondPlayerWinner = 0;
     UINavigationBar* navigationBar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0,30, self.view.frame.size.width, 50)];
-    self.navItem = [[UINavigationItem alloc] initWithTitle:self.result];
-    [navigationBar setItems:@[self.navItem]];
+    self.navigationItem = [[UINavigationItem alloc] initWithTitle:self.result];
+    [navigationBar setItems:@[self.navigationItem]];
     navigationBar.backgroundColor = UIColor.blueColor;
     [self.view addSubview:navigationBar];
 }
@@ -142,7 +142,7 @@
         
         self.secondPlayerWinner++;
         NSString *newResult = [NSString stringWithFormat:@"%li - %li", self.firstPlayerWinner, self.secondPlayerWinner];
-        self.navItem.title = newResult;
+        self.navigationItem.title = newResult;
         [self setupPosition];
        
         
@@ -152,7 +152,7 @@
     {
         self.firstPlayerWinner++;
         NSString *newResult = [NSString stringWithFormat:@"%li - %li", self.firstPlayerWinner, self.secondPlayerWinner];
-        self.navItem.title = newResult;
+        self.navigationItem.title = newResult;
         [self setupPosition];
         
     }

@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5BF9A12222C817F100E91349 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9A12122C817F100E91349 /* AppDelegate.m */; };
-		5BF9A12522C817F100E91349 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9A12422C817F100E91349 /* ViewController.m */; };
 		5BF9A12A22C817F600E91349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF9A12922C817F600E91349 /* Assets.xcassets */; };
 		5BF9A12D22C817F600E91349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF9A12B22C817F600E91349 /* LaunchScreen.storyboard */; };
 		5BF9A13022C817F600E91349 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9A12F22C817F600E91349 /* main.m */; };
 		5BF9A13A22C817F600E91349 /* AOTryViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9A13922C817F600E91349 /* AOTryViewControllerTests.m */; };
 		5BF9A14522C817F600E91349 /* AOTryViewControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9A14422C817F600E91349 /* AOTryViewControllerUITests.m */; };
-		5BF9A1A022CE588F00E91349 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9A19F22CE588F00E91349 /* OtherViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +36,6 @@
 		5BF9A11D22C817F100E91349 /* AOTryViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AOTryViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF9A12022C817F100E91349 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5BF9A12122C817F100E91349 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5BF9A12322C817F100E91349 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5BF9A12422C817F100E91349 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5BF9A12922C817F600E91349 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BF9A12C22C817F600E91349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BF9A12E22C817F600E91349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,8 +46,6 @@
 		5BF9A14022C817F600E91349 /* AOTryViewControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AOTryViewControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF9A14422C817F600E91349 /* AOTryViewControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AOTryViewControllerUITests.m; sourceTree = "<group>"; };
 		5BF9A14622C817F600E91349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BF9A19E22CE588F00E91349 /* OtherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
-		5BF9A19F22CE588F00E91349 /* OtherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +98,6 @@
 			children = (
 				5BF9A12022C817F100E91349 /* AppDelegate.h */,
 				5BF9A12122C817F100E91349 /* AppDelegate.m */,
-				5BF9A1A122CE58B600E91349 /* BarViewControllers */,
 				5BF9A12922C817F600E91349 /* Assets.xcassets */,
 				5BF9A12B22C817F600E91349 /* LaunchScreen.storyboard */,
 				5BF9A12E22C817F600E91349 /* Info.plist */,
@@ -129,17 +122,6 @@
 				5BF9A14622C817F600E91349 /* Info.plist */,
 			);
 			path = AOTryViewControllerUITests;
-			sourceTree = "<group>";
-		};
-		5BF9A1A122CE58B600E91349 /* BarViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				5BF9A12322C817F100E91349 /* ViewController.h */,
-				5BF9A12422C817F100E91349 /* ViewController.m */,
-				5BF9A19E22CE588F00E91349 /* OtherViewController.h */,
-				5BF9A19F22CE588F00E91349 /* OtherViewController.m */,
-			);
-			name = BarViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,9 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BF9A12522C817F100E91349 /* ViewController.m in Sources */,
 				5BF9A13022C817F600E91349 /* main.m in Sources */,
-				5BF9A1A022CE588F00E91349 /* OtherViewController.m in Sources */,
 				5BF9A12222C817F100E91349 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

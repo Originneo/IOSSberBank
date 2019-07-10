@@ -10,32 +10,26 @@
 #import "ViewController.h"
 @interface AppDelegate ()
 @property(nonatomic,strong)ViewController* vc;
+@property(nonatomic,strong)UINavigationController* navigationController;
+@property (nonatomic,strong) UIImageView *imageView;
+@property (nonatomic,strong) UIImage *imageFromPicker;
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     self.window.backgroundColor = UIColor.whiteColor;
     [self.window makeKeyAndVisible];
-    UINavigationController* navigationController = [UINavigationController new];
+    self.navigationController = [UINavigationController new];
     self.vc = [ViewController new];
-    [navigationController setViewControllers:@[self.vc]];
-    self.window.rootViewController = navigationController;
-    self.vc.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveImage)];
-    self.vc.navigationItem.rightBarButtonItem.tintColor = UIColor.blueColor;
+    [self.navigationController setViewControllers:@[self.vc]];
+    self.window.rootViewController = self.navigationController;
     
 	// Override point for customization after application launch.
 	return YES;
 }
 
--(void)saveImage
-{
-    UIImage* image = [self.vc.imageView image];
-    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-    
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 	// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

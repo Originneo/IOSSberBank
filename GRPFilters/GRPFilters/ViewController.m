@@ -13,9 +13,10 @@
 @import CoreImage;
 
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic,strong) UIImage *imageFromPicker;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, copy) NSArray<GRPFilterModel *> *filters;
@@ -29,12 +30,14 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(rightButtonSaveImage)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(leftButtonChooseImage)];
 	[self setupViews];
 	self.tableView.dataSource = self;
 	self.tableView.delegate = self;
 	[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-	self.image = [UIImage imageNamed:@"img"];
-    self.imageView.image = self.image;
+    self.imageView.image = [UIImage imageNamed:@"default"];
+    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
 
 	self.fabric = [GRPFiltersFabric new];
 	self.filters = @[
@@ -45,14 +48,16 @@
 					 [self.fabric createZoomBlurFilter]
 					 ];
 	self.context = [CIContext contextWithOptions:nil];
+    self.imageFromPicker = [UIImage new];
 }
 
 - (void)setupViews
 {
 	self.tableView = [UITableView new];
 	self.imageView = [UIImageView new];
-	self.imageView.image = self.image;
-
+    
+    self.navigationItem.rightBarButtonItem.tintColor = UIColor.blueColor;
+   
 	self.imageView.translatesAutoresizingMaskIntoConstraints = NO;
 	self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
 
@@ -72,6 +77,30 @@
 	[self.tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
 }
 
+-(void)rightButtonSaveImage
+{
+    UIImage* image = [self.imageView image];
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    
+}
+
+-(void) leftButtonChooseImage
+{
+    UIImagePickerControllerSourceType type = UIImagePickerControllerSourceTypePhotoLibrary;
+    if ([UIImagePickerController isSourceTypeAvailable:type])
+    {
+        UIImagePickerController *controller = [UIImagePickerController new];
+        controller.sourceType = type;
+        controller.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:type];
+        [self.navigationController presentViewController:controller animated:YES completion:^{}];
+        controller.delegate = self;
+    }
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    self.imageFromPicker = info[UIImagePickerControllerOriginalImage];
+    self.imageView.image = self.imageFromPicker;
+}
 
 #pragma mark -UITableViewDataSource
 
@@ -104,7 +133,7 @@
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	GRPFilterModel *filterModel = self.filters[indexPath.row];
-	CGImageRef cgImage = self.image.CGImage;
+	CGImageRef cgImage = self.imageFromPicker.CGImage;
 	CGImageRetain(cgImage);
 	CIImage *beginImage = [CIImage imageWithCGImage: cgImage];
 
